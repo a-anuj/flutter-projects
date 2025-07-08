@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(MaterialApp(home: Text("Dice App")));
+  runApp(const MaterialApp(home: Scaffold(body: Text("Hello"))));
 }
