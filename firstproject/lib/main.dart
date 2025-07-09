@@ -15,7 +15,12 @@ void main() {
               ),
             ),
             child :Center(
-              child: Text("First Flutter App")
+              child: Text("First Flutter App",
+                style:TextStyle(
+                 color: Colors.white,
+                 fontSize: 28,
+                ),
+              ),
           )
           )
       ),
