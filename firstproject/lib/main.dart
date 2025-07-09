@@ -8,8 +8,10 @@ void main() {
             decoration: BoxDecoration(
               gradient: LinearGradient(colors:
               [
-                Colors.deepPurple,Colors.purple
+                Colors.purple,Colors.deepPurple
               ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight
               ),
             ),
             child :Center(
