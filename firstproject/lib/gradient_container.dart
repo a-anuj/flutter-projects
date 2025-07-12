@@ -15,7 +15,9 @@ class GradientContainer extends StatelessWidget {
           ),
         ),
         child :Center(
-          child: StyledText("Dynamic Text"),
+          child: Image.asset("assets/images/dice-6.png",
+            width:200,
+          ),
         )
     );
   }
