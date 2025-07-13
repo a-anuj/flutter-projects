@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "dart:math";
 
 class DiceRoller extends StatefulWidget{
   const DiceRoller({super.key});
@@ -9,10 +10,13 @@ class DiceRoller extends StatefulWidget{
 }
 
 class _DiceRollerState extends State<DiceRoller>{
+  
   var activeDiceImage = "assets/images/dice-6.png";
 
   void rollTheDice(){
-  activeDiceImage = "assets/images/dice-5.png";
+    setState(() {
+      activeDiceImage = "assets/images/dice-2.png";
+    });
   }
 
   @override
