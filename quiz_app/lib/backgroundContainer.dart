@@ -14,7 +14,7 @@ class bgContainer extends StatelessWidget{
             mainAxisSize:MainAxisSize.min,
             children: [
               Image.asset("assets/images/quiz-logo.png",width: 300,),
-              SizedBox(height: 30),
+              SizedBox(height: 80),
               Text("Learn Flutter the Fun way!",
               style: TextStyle(
                 fontSize: 25,
@@ -22,7 +22,7 @@ class bgContainer extends StatelessWidget{
                   )
                 ,),
               SizedBox(height: 40),
-              TextButton(onPressed: quiz, child: Text("Start Quiz",
+              OutlinedButton(onPressed: quiz, child: Text("Start Quiz",
               style: TextStyle(fontSize: 18,color: Colors.white),))
             ],
           ),
