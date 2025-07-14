@@ -22,8 +22,21 @@ class bgContainer extends StatelessWidget{
                   )
                 ,),
               SizedBox(height: 40),
-              OutlinedButton(onPressed: quiz, child: Text("Start Quiz",
-              style: TextStyle(fontSize: 18,color: Colors.white),))
+              OutlinedButton(
+                  onPressed: quiz,
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(
+                      color:Colors.white,
+                    ),
+                    foregroundColor: Colors.white, 
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)
+                      )
+                  ),
+                  child: Text("Start Quiz",
+                    style: TextStyle(fontSize: 18,color: Colors.white),
+                    )
+              )
             ],
           ),
         ),
