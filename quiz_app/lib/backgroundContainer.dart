@@ -41,7 +41,6 @@ class bgContainer extends StatelessWidget{
               )
             ],
           ),
-        ),
-    );
+        );
   }
 }
