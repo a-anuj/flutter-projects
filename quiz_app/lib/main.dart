@@ -3,7 +3,5 @@ import "package:quiz_app/backgroundContainer.dart";
 import "package:quiz_app/quiz.dart";
 
 void main(){
-  runApp(
-
-  );
+  runApp(Quiz());
 }
