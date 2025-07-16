@@ -1,9 +1,10 @@
 import "package:flutter/material.dart";
 
 class bgContainer extends StatelessWidget{
-  const bgContainer({super.key});
+  const bgContainer(this.startQuiz,{super.key});
 
-  quiz(){}
+  final void Function() startQuiz;
+
 
   @override
   Widget build(context){
@@ -24,12 +25,12 @@ class bgContainer extends StatelessWidget{
                 ,),
               SizedBox(height: 40),
               OutlinedButton.icon(
-                  onPressed: quiz,
+                  onPressed: startQuiz,
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(
                       color:Colors.white,
                     ),
-                    foregroundColor: Colors.white, 
+                    foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12)
                       )
