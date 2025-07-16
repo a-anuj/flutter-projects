@@ -16,7 +16,10 @@ class _QuizState extends State<Quiz>{
   Widget build(context){
     return MaterialApp(
       home:Scaffold(
-          body: bgContainer()
+          body: Container(
+              color: Colors.deepOrange,
+              child: bgContainer(),
+          )
       ),
     );
   }

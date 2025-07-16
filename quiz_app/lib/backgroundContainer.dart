@@ -7,9 +7,7 @@ class bgContainer extends StatelessWidget{
 
   @override
   Widget build(context){
-    return Container(
-        color: Colors.deepOrange,
-        child: Center(
+    return Center(
           child: Column(
             mainAxisSize:MainAxisSize.min,
             children: [
