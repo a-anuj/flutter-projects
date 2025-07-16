@@ -14,6 +14,6 @@ class _QuestionsScreenState extends State<QuestionsScreen>{
   Widget build(context){
     return(
       Text("Question Screen!")
-    )
+    );
   }
 }
