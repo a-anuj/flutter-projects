@@ -13,7 +13,8 @@ class Quiz extends StatefulWidget{
 
 
 class _QuizState extends State<Quiz>{
-  Widget activeScreen = bgContainer();
+  Widget activeScreen = bgContainer(switchScreen);
+
 
   void switchScreen(){
     setState(() {
