@@ -13,7 +13,11 @@ class _QuestionsScreenState extends State<QuestionsScreen>{
   @override
   Widget build(context){
     return(
-      Text("Question Screen!")
+      Scaffold(
+        body: Center(
+          child: Text("Hello"),
+        ),
+      )
     );
   }
 }
