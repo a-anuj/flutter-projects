@@ -20,7 +20,7 @@ class AnswerButton extends StatelessWidget{
               vertical: 10,
               horizontal: 40,
             ),
-            backgroundColor: Colors.blueGrey,
+            backgroundColor: Colors.grey,
             foregroundColor: Colors.white
           ),
           child: Text(answerText)
