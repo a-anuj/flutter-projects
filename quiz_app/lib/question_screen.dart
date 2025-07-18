@@ -20,9 +20,9 @@ class _QuestionsScreenState extends State<QuestionsScreen>{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text("The Question goes here...",style: TextStyle(color: Colors.white),),
-              AnswerButton("Answer 1"),
-              AnswerButton("Answer 2"),
-              AnswerButton("Answer 3"),
+              AnswerButton(answerText: "Answer 1",onTap: (){},),
+              AnswerButton(answerText: "Answer 2",onTap: (){},),
+              AnswerButton(answerText: "Answer 3",onTap: (){},),
             ],
           ),
         )
