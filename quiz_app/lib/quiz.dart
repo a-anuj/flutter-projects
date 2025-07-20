@@ -13,12 +13,17 @@ class Quiz extends StatefulWidget{
 
 
 class _QuizState extends State<Quiz>{
+  final List<String> selectedAnswers = [];
   var activeScreen = "bg-container";
 
   void switchScreen(){
     setState(() {
       activeScreen = "questions-screen";
     });
+  }
+
+  void chooseAnswer(String answer){
+    selectedAnswers.add(answer);
   }
 
   @override
