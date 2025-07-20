@@ -34,7 +34,7 @@ class _QuizState extends State<Quiz>{
               color: Colors.deepOrange,
               child: activeScreen == "bg-container"
                   ? bgContainer(switchScreen)
-                  : QuestionsScreen(chooseAnswer),
+                  : QuestionsScreen(onSelectAnswer: chooseAnswer),
           )
       ),
     );
