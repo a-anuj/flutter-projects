@@ -6,7 +6,15 @@ class QuestionsScreen extends StatelessWidget{
 
   @override
   Widget build(context) {
-    return Column();
+    return Column(
+      children: summaryData.map(
+          (data){
+            return Row(children: [
+              Text(((data["question_index"] as int) + 1).toString()),
+            ],);
+          },
+      ).toList(),
+    );
   }
 
 }
