@@ -12,10 +12,11 @@ const questions = [
 
   QuizQuestion("Who is the current Prime Minister of India?",
     [
+      'Narendra Modi',
       'Rahul Gandhi',
       'Manmohan Singh',
-      'Indira Gandhi',
-      'Narendra Modi'
+      'Indira Gandhi'
+
     ],
   ),
 
