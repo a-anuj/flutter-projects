@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class QuestionsScreen extends StatelessWidget{
-  const QuestionsScreen(this.summaryData,{super.key});
+class QuestionsSummary extends StatelessWidget{
+  const QuestionsSummary(this.summaryData,{super.key});
   final List<Map<String,Object>> summaryData;
 
   @override
@@ -11,10 +11,19 @@ class QuestionsScreen extends StatelessWidget{
           (data){
             return Row(children: [
               Text(((data["question_index"] as int) + 1).toString()),
+              Expanded(
+                  child: Column(
+                    children: [
+                      Text(data["question"] as String),
+                      SizedBox(height: 5,),
+                      Text(data["user_answer"] as String),
+                      Text(data["correct_answer"] as String)
+                    ],
+                  )
+              )
             ],);
           },
       ).toList(),
     );
   }
-
 }
