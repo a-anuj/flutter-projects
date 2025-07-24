@@ -13,7 +13,18 @@ class ExpenseItem extends StatelessWidget{
           horizontal: 20,
           vertical: 16,
         ),
-        child: Text(expense.title),
+        child: Column(
+          children: [
+            Text(expense.title),
+            SizedBox(height: 4),
+            Row(
+              children: [
+                Text('\$${expense.amount.toStringAsFixed(2)}')
+              ],
+            )
+
+          ],
+        )
       ),
     );
 
