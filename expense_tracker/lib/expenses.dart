@@ -31,6 +31,12 @@ class _ExpensesState extends State<Expenses>{
   @override
   Widget build(context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("EXPTracker"),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.add))
+        ],
+      ),
       body: Column(
         children: [
           Text("Chart goes here..."),
