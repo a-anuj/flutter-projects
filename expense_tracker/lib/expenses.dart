@@ -28,13 +28,22 @@ class _ExpensesState extends State<Expenses>{
     )
   ];
 
+  void _openAddExpenseOverlay(){
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => Text("This is the overlay created"),
+    );
+  }
+
   @override
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("EXPTracker"),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.add))
+          IconButton(
+              onPressed: _openAddExpenseOverlay,
+              icon: Icon(Icons.add))
         ],
       ),
       body: Column(
