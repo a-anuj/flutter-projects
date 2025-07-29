@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'flutter-chat-app-33a67',
     storageBucket: 'flutter-chat-app-33a67.firebasestorage.app',
   );
+
 }
