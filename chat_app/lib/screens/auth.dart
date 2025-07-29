@@ -12,7 +12,28 @@ class AuthScreen extends StatefulWidget{
 class _AuthScreenState extends State<AuthScreen>{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  top: 30,
+                  bottom: 20,
+                  left: 20,
+                  right: 20
+                ),
+                width: 200,
+                child: Image.asset("assets/images/chat.png"),
+              ),
+              
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
