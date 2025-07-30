@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ChatScreen extends StatelessWidget{
-  const ChatScreen({super.key});
-  
+class SplashScreen extends StatelessWidget{
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,9 +10,9 @@ class ChatScreen extends StatelessWidget{
         title: Text("FlutterChat"),
       ),
       body: Center(
-          child: Text("Logged In succesfully")
+          child: Text("Loading...")
       ),
     );
-    
+
   }
 }
