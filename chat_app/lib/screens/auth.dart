@@ -24,6 +24,7 @@ class _AuthScreenState extends State<AuthScreen>{
   var _enteredPassword = "";
   File? _selectedImage;
   var _isAuthenticating = false;
+  var _enteredUsername = "";
 
   void submit() async {
     final isValid = _form.currentState!.validate();
@@ -57,7 +58,7 @@ class _AuthScreenState extends State<AuthScreen>{
             .collection('users')
             .doc(userCredential.user!.uid)
             .set({
-            'username' : 'pass for now',
+            'username' : _enteredUsername,
             'email' : _enteredEmail,
             'image_url' : imageUrl,
         });
@@ -123,6 +124,21 @@ class _AuthScreenState extends State<AuthScreen>{
                                   _enteredEmail = value!;
                                 },
                               ),
+                              if (!_isLogin)
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                    labelText: "Username"
+                                  ),
+                                  validator: (value){
+                                    if(value==null || value.trim().length<4 || value.isEmpty){
+                                      return "Username must be 4 characters long";
+                                    }
+                                    return null;
+                                  },
+                                  onSaved: (value){
+                                    _enteredUsername = value!;
+                                  },
+                                ),
                               TextFormField(
                                 decoration: InputDecoration(
                                   labelText: "Password"
