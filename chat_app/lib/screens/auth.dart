@@ -22,6 +22,7 @@ class _AuthScreenState extends State<AuthScreen>{
   var _enteredEmail = "";
   var _enteredPassword = "";
   File? _selectedImage;
+  var _isAuthenticating = false;
 
   void submit() async {
     final isValid = _form.currentState!.validate();
@@ -32,6 +33,9 @@ class _AuthScreenState extends State<AuthScreen>{
     _form.currentState!.save();
 
     try {
+      setState(() {
+        _isAuthenticating = true;
+      });
       if (_isLogin) {
         final userCredential = await _firebase.signInWithEmailAndPassword(
             email: _enteredEmail,
@@ -55,7 +59,11 @@ class _AuthScreenState extends State<AuthScreen>{
       ScaffoldMessenger.of(context).clearSnackBars();
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(error.message ?? "Authentication Failed")));
+      setState(() {
+        _isAuthenticating = false;
+      });
     }
+
   }
 
   @override
@@ -123,25 +131,29 @@ class _AuthScreenState extends State<AuthScreen>{
                                 },
                               ),
                               const SizedBox(height: 12,),
-                              ElevatedButton(
-                                  onPressed: submit,
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Theme.of(context).colorScheme.primaryContainer
-                                  ),
-                                  child: Text(_isLogin? "Login" : "Signup")
-                              ),
-                              TextButton(
-                                  onPressed: (){
-                                    setState(() {
-                                      _isLogin = !_isLogin;
-                                    });
-                                  } ,
-                                  child: Text(
-                                      _isLogin
-                                          ? "Create an account"
-                                          : "Already have an account"
-                                  )
-                              )
+                              if (_isAuthenticating)
+                                const CircularProgressIndicator(),
+                              if (!_isAuthenticating)
+                                ElevatedButton(
+                                    onPressed: submit,
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Theme.of(context).colorScheme.primaryContainer
+                                    ),
+                                    child: Text(_isLogin? "Login" : "Signup")
+                                ),
+                              if (!_isAuthenticating)
+                                TextButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        _isLogin = !_isLogin;
+                                      });
+                                    } ,
+                                    child: Text(
+                                        _isLogin
+                                            ? "Create an account"
+                                            : "Already have an account"
+                                    )
+                                )
                             ],
                           )
                       ),
